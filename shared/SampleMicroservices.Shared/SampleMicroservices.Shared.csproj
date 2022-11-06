@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>366570c1-6cea-419b-8f16-f14fbd907a58</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App"/>
+  </ItemGroup>
+
+</Project>
