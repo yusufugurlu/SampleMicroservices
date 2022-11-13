@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SampleMicroservices.Services.Catalog.Dtos;
 using SampleMicroservices.Services.Catalog.Services;
 using SampleMicroservices.Shared.ControllerBases;
@@ -18,7 +17,7 @@ namespace SampleMicroservices.Services.Catalog.Controllers
             _categoryService = categoryService;
         }
 
-        [HttpGet()]
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var result = await _categoryService.GetAllAsync();
@@ -34,7 +33,7 @@ namespace SampleMicroservices.Services.Catalog.Controllers
         }
 
 
-        [HttpPost()]
+        [HttpPost]
         public async Task<IActionResult> Create(CategoryDto categoryDto)
         {
             var result = await _categoryService.CreateAsync(categoryDto);

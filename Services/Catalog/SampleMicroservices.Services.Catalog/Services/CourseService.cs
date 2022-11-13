@@ -58,7 +58,7 @@ namespace SampleMicroservices.Services.Catalog.Services
                 return Response<CourseDto>.Success(_mapper.Map<CourseDto>(course), 200);
             }
             else
-                return Response<CourseDto>.Fail("category not found", 204);
+                return Response<CourseDto>.Fail("category not found", 404);
         }
 
         public async Task<Response<CourseDto>> CreateAsync(CourseCreateDto courseDto)

@@ -18,7 +18,7 @@ namespace SampleMicroservices.Services.Catalog.Controllers
             _courseService = courseService;
         }
 
-        [HttpGet()]
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var result = await _courseService.GetAllAsync();
@@ -33,22 +33,22 @@ namespace SampleMicroservices.Services.Catalog.Controllers
             return CreateActionResultInstance(result);
         }
 
+        [HttpGet]
         [Route("/api/[controller]/GetAllByUserId/{userId}")]
-        [HttpGet("{userId}")]
         public async Task<IActionResult> GetAllByUserId(string userId)
         {
             var result = await _courseService.GetAllByUserIdAsync(userId);
             return CreateActionResultInstance(result);
         }
 
-        [HttpPost()]
+        [HttpPost]
         public async Task<IActionResult> Create(CourseCreateDto courseDto)
         {
             var result = await _courseService.CreateAsync(courseDto);
             return CreateActionResultInstance(result);
         }
 
-        [HttpPut()]
+        [HttpPut]
         public async Task<IActionResult> Update(CourseUpdateDto courseDto)
         {
             var result = await _courseService.UpdateAsync(courseDto);

@@ -33,7 +33,7 @@ namespace SampleMicroservices.Services.Catalog.Services
             if (category != null)
                 return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(category), 200);
             else
-                return Response<CategoryDto>.Fail("category not found", 204);
+                return Response<CategoryDto>.Fail("category not found", 404);
 
         
         }
