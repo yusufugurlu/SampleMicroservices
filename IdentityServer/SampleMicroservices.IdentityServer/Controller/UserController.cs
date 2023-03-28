@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using SampleMicroservices.IdentityServer.Dtos;
 using SampleMicroservices.IdentityServer.Models;
 using SampleMicroservices.Shared.Dtos;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using static IdentityServer4.IdentityServerConstants;
@@ -38,6 +39,19 @@ namespace SampleMicroservices.IdentityServer.Controller
                 return BadRequest(Response<NoContent>.Fail(result.Errors.Select(x => x.Description).ToList(), 400));
             }
             return NoContent();
+
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetUser()
+        {
+            var userIdClaim = User.Claims.FirstOrDefault(x=>x.Type==JwtRegisteredClaimNames.Sub);
+            if (userIdClaim == null) return BadRequest();
+
+            var user = await _userManager.FindByIdAsync(userIdClaim.Value);
+            if (user == null) return BadRequest();
+
+          return Ok(new {Id=user.Id,UserName=user.UserName,Email=user.Email });
 
         }
     }
