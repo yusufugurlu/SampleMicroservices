@@ -1,3 +1,5 @@
 Services
 
 CatalogAPI = 5011
+PhotoAPI = 5012
+IdentityServer = 5001
