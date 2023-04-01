@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using SampleMicroservices.Services.Basket.Services;
 using SampleMicroservices.Services.Basket.Settings;
+using SampleMicroservices.Shared.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHttpContextAccessor();
 builder.Services.Configure<RedisSettings>(builder.Configuration.GetSection("RedisSettings")); // options pattern
+builder.Services.AddScoped<ISharedIdentityService,SharedIdentityService>();
 
 builder.Services.AddSingleton<RedisService>(sp =>
 {
