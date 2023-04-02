@@ -4,4 +4,5 @@ CatalogAPI = 5011
 PhotoAPI = 5012
 BasketAPI=5013
 DiscountApi=5014
+OrderApi = 5015
 IdentityServer = 5001
