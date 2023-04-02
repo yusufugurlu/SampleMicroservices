@@ -36,6 +36,7 @@ namespace SampleMicroservices.Services.Basket.Controllers
         }
 
 
+        [HttpDelete]
         public async Task<IActionResult> DeleteBasket()
         {
             string userId = _sharedIdentityService.GetUserId;
