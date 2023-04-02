@@ -6,12 +6,15 @@ using Microsoft.Extensions.Options;
 using SampleMicroservices.Services.Basket.Services;
 using SampleMicroservices.Services.Basket.Settings;
 using SampleMicroservices.Shared.Services;
+using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 var requiredAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build(); // need to be Authorization   Authorization olmus biri olmasi lazim
+
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub"); // we don't need convert sub to nameidentifier. If you can't do this. Later It might be harder.
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
