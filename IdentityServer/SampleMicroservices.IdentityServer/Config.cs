@@ -16,9 +16,10 @@ namespace SampleMicroservices.IdentityServer
             new ApiResource("resource_catalog"){Scopes={ "catalog_fullpermission" } },
             new ApiResource("photo_stock_catalog"){Scopes={ "photo_fullpermission" } },
              new ApiResource("resource_basket"){Scopes={ "basket_fullpermission" } },
+               new ApiResource("resource_discount"){Scopes={ "discount_fullpermission" } },
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
 
-        };
+        }; 
         public static IEnumerable<IdentityResource> IdentityResources =>
                    new IdentityResource[]
                    {
@@ -35,6 +36,7 @@ namespace SampleMicroservices.IdentityServer
                 new ApiScope("catalog_fullpermission","access the catalog for full permission"),
                 new ApiScope("photo_fullpermission","access the photo for full permission"),
                   new ApiScope("basket_fullpermission","access the basket for full permission"),
+                  new ApiScope("discount_fullpermission","access the discount for full permission"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -56,7 +58,7 @@ namespace SampleMicroservices.IdentityServer
                   AllowOfflineAccess=true,
                   ClientSecrets={new Secret("secret".Sha256()) },
                   AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
-                  AllowedScopes={ "basket_fullpermission",IdentityServerConstants.StandardScopes.Email,
+                  AllowedScopes={ "discount_fullpermission","basket_fullpermission",IdentityServerConstants.StandardScopes.Email,
                                     IdentityServerConstants.StandardScopes.OpenId,
                                     IdentityServerConstants.StandardScopes.Profile,
                                     IdentityServerConstants.StandardScopes.OfflineAccess,//refresh token
