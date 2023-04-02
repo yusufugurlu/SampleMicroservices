@@ -18,7 +18,7 @@ namespace SampleMicroservices.IdentityServer
              new ApiResource("resource_basket"){Scopes={ "basket_fullpermission" } },
                new ApiResource("resource_discount"){Scopes={ "discount_fullpermission" } },
                 new ApiResource("resource_order"){Scopes={ "order_fullpermission" } },
-
+                  new ApiResource("resource_payment"){Scopes={ "payment_fullpermission" } },
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
 
         };
@@ -40,6 +40,7 @@ namespace SampleMicroservices.IdentityServer
                   new ApiScope("basket_fullpermission","access the basket for full permission"),
                   new ApiScope("discount_fullpermission","access the discount for full permission"),
                    new ApiScope("order_fullpermission","access the order for full permission"),
+                    new ApiScope("payment_fullpermission","access the payment for full permission"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -61,7 +62,7 @@ namespace SampleMicroservices.IdentityServer
                   AllowOfflineAccess=true,
                   ClientSecrets={new Secret("secret".Sha256()) },
                   AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
-                  AllowedScopes={ "order_fullpermission","discount_fullpermission","basket_fullpermission",IdentityServerConstants.StandardScopes.Email,
+                  AllowedScopes={ "payment_fullpermission","order_fullpermission","discount_fullpermission","basket_fullpermission",IdentityServerConstants.StandardScopes.Email,
                                     IdentityServerConstants.StandardScopes.OpenId,
                                     IdentityServerConstants.StandardScopes.Profile,
                                     IdentityServerConstants.StandardScopes.OfflineAccess,//refresh token

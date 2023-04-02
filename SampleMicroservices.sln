@@ -37,15 +37,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMicroservices.Service
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{2F037B99-0D93-4F48-A027-C8E78F7D99DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMicroservices.Services.Order.UI", "Services\Order\SampleMicroservices.Services.Order.UI\SampleMicroservices.Services.Order.UI.csproj", "{630B8FD7-A054-4CA3-BE17-C3C422FFEEB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMicroservices.Services.Order.UI", "Services\Order\SampleMicroservices.Services.Order.UI\SampleMicroservices.Services.Order.UI.csproj", "{630B8FD7-A054-4CA3-BE17-C3C422FFEEB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMicroservices.Services.Order.Application", "Services\Order\SampleMicroservices.Services.Order.Application\SampleMicroservices.Services.Order.Application.csproj", "{B5FB2FF0-C142-4223-B6EE-DF7DBA104E8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMicroservices.Services.Order.Application", "Services\Order\SampleMicroservices.Services.Order.Application\SampleMicroservices.Services.Order.Application.csproj", "{B5FB2FF0-C142-4223-B6EE-DF7DBA104E8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMicroservices.Services.Order.Domain", "Services\Order\SampleMicroservices.Services.Order.Domain\SampleMicroservices.Services.Order.Domain.csproj", "{95FE3ACF-A96C-4126-B45E-66F36644CFAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMicroservices.Services.Order.Domain", "Services\Order\SampleMicroservices.Services.Order.Domain\SampleMicroservices.Services.Order.Domain.csproj", "{95FE3ACF-A96C-4126-B45E-66F36644CFAE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMicroservices.Services.Order.Core", "Services\Order\SampleMicroservices.Services.Order.Core\SampleMicroservices.Services.Order.Core.csproj", "{3583965B-D609-4460-9DCB-FB15ED543F4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMicroservices.Services.Order.Instracture", "Services\Order\SampleMicroservices.Services.Order.Instracture\SampleMicroservices.Services.Order.Instracture.csproj", "{67532826-B16D-4A34-89B7-3608B865EB3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMicroservices.Services.Order.Instracture", "Services\Order\SampleMicroservices.Services.Order.Instracture\SampleMicroservices.Services.Order.Instracture.csproj", "{67532826-B16D-4A34-89B7-3608B865EB3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FakePayment", "FakePayment", "{BEEB6FCE-0C30-4ABB-BC0C-CAF557F3EA51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMicroservices.Services.FakePayment", "Services\FakePayment\SampleMicroservices.Services.FakePayment\SampleMicroservices.Services.FakePayment.csproj", "{8632BB43-1AF3-43FE-B28D-4D69C0482CFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +101,10 @@ Global
 		{67532826-B16D-4A34-89B7-3608B865EB3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67532826-B16D-4A34-89B7-3608B865EB3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67532826-B16D-4A34-89B7-3608B865EB3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8632BB43-1AF3-43FE-B28D-4D69C0482CFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8632BB43-1AF3-43FE-B28D-4D69C0482CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8632BB43-1AF3-43FE-B28D-4D69C0482CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8632BB43-1AF3-43FE-B28D-4D69C0482CFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +126,8 @@ Global
 		{95FE3ACF-A96C-4126-B45E-66F36644CFAE} = {2F037B99-0D93-4F48-A027-C8E78F7D99DB}
 		{3583965B-D609-4460-9DCB-FB15ED543F4F} = {2F037B99-0D93-4F48-A027-C8E78F7D99DB}
 		{67532826-B16D-4A34-89B7-3608B865EB3B} = {2F037B99-0D93-4F48-A027-C8E78F7D99DB}
+		{BEEB6FCE-0C30-4ABB-BC0C-CAF557F3EA51} = {7418A2DC-69B6-4C9D-88A0-8C63774D784F}
+		{8632BB43-1AF3-43FE-B28D-4D69C0482CFD} = {BEEB6FCE-0C30-4ABB-BC0C-CAF557F3EA51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A5F746C9-DF37-41C7-B69F-58AE8718C46D}
