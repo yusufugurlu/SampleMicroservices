@@ -19,6 +19,7 @@ namespace SampleMicroservices.IdentityServer
                new ApiResource("resource_discount"){Scopes={ "discount_fullpermission" } },
                 new ApiResource("resource_order"){Scopes={ "order_fullpermission" } },
                   new ApiResource("resource_payment"){Scopes={ "payment_fullpermission" } },
+                      new ApiResource("resource_gateway"){Scopes={"gateway_fullpermission"}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
 
         };
@@ -41,6 +42,7 @@ namespace SampleMicroservices.IdentityServer
                   new ApiScope("discount_fullpermission","access the discount for full permission"),
                    new ApiScope("order_fullpermission","access the order for full permission"),
                     new ApiScope("payment_fullpermission","access the payment for full permission"),
+                        new ApiScope("gateway_fullpermission","Gateway API için full erişim"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -53,7 +55,7 @@ namespace SampleMicroservices.IdentityServer
                   ClientId="WebMvcClient",
                   ClientSecrets={new Secret("secret".Sha256()) },
                   AllowedGrantTypes=GrantTypes.ClientCredentials,
-                  AllowedScopes={ "catalog_fullpermission", "photo_fullpermission", IdentityServerConstants.LocalApi.ScopeName }
+                  AllowedScopes={ "catalog_fullpermission", "photo_fullpermission", "gateway_fullpermission", IdentityServerConstants.LocalApi.ScopeName }
               },
                             new Client()
               {
@@ -62,7 +64,7 @@ namespace SampleMicroservices.IdentityServer
                   AllowOfflineAccess=true,
                   ClientSecrets={new Secret("secret".Sha256()) },
                   AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
-                  AllowedScopes={ "payment_fullpermission","order_fullpermission","discount_fullpermission","basket_fullpermission",IdentityServerConstants.StandardScopes.Email,
+                  AllowedScopes={ "gateway_fullpermission","payment_fullpermission","order_fullpermission","discount_fullpermission","basket_fullpermission",IdentityServerConstants.StandardScopes.Email,
                                     IdentityServerConstants.StandardScopes.OpenId,
                                     IdentityServerConstants.StandardScopes.Profile,
                                     IdentityServerConstants.StandardScopes.OfflineAccess,//refresh token
@@ -74,7 +76,15 @@ namespace SampleMicroservices.IdentityServer
                   AbsoluteRefreshTokenLifetime=(int)(DateTime.Now.AddDays(60) - DateTime.Now).TotalSeconds,
                   RefreshTokenUsage=TokenUsage.ReUse,
 
-              }
+              },
+                new Client
+                {
+                   ClientName="Token Exchange Client",
+                    ClientId="TokenExhangeClient",
+                    ClientSecrets= {new Secret("secret".Sha256())},
+                    AllowedGrantTypes= new []{ "urn:ietf:params:oauth:grant-type:token-exchange" },
+                    AllowedScopes={ "discount_fullpermission", "payment_fullpermission", IdentityServerConstants.StandardScopes.OpenId }
+                },
             };
     }
 }
