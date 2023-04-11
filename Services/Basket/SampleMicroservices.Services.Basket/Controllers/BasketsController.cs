@@ -24,7 +24,8 @@ namespace SampleMicroservices.Services.Basket.Controllers
         public async Task<IActionResult> GetBasket()
         {
             string userId = _sharedIdentityService.GetUserId;
-            return CreateActionResultInstance(await _basketService.GetBasket(userId));
+            var data = await _basketService.GetBasket(userId);
+            return CreateActionResultInstance(data);
         }
 
 

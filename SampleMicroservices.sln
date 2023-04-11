@@ -53,7 +53,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMicroservices.Service
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{9D515675-CBFF-4C60-8CFB-607720B6C5C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMicroservices.Services.APIGateway", "Gateway\SampleMicroservices.Services.APIGateway\SampleMicroservices.Services.APIGateway.csproj", "{2E8F2F79-E0B3-4CFD-A41A-39016A1D8859}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMicroservices.Services.APIGateway", "Gateway\SampleMicroservices.Services.APIGateway\SampleMicroservices.Services.APIGateway.csproj", "{2E8F2F79-E0B3-4CFD-A41A-39016A1D8859}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frondends", "Frondends", "{8B428419-DF5E-4685-985A-8793C348E758}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMicroservices.Web", "Frondends\SampleMicroservices.Web\SampleMicroservices.Web.csproj", "{199B67EA-0CA7-4CA1-849B-B62CEFAA578C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +117,10 @@ Global
 		{2E8F2F79-E0B3-4CFD-A41A-39016A1D8859}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E8F2F79-E0B3-4CFD-A41A-39016A1D8859}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E8F2F79-E0B3-4CFD-A41A-39016A1D8859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{199B67EA-0CA7-4CA1-849B-B62CEFAA578C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199B67EA-0CA7-4CA1-849B-B62CEFAA578C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199B67EA-0CA7-4CA1-849B-B62CEFAA578C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199B67EA-0CA7-4CA1-849B-B62CEFAA578C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +145,7 @@ Global
 		{BEEB6FCE-0C30-4ABB-BC0C-CAF557F3EA51} = {7418A2DC-69B6-4C9D-88A0-8C63774D784F}
 		{8632BB43-1AF3-43FE-B28D-4D69C0482CFD} = {BEEB6FCE-0C30-4ABB-BC0C-CAF557F3EA51}
 		{2E8F2F79-E0B3-4CFD-A41A-39016A1D8859} = {9D515675-CBFF-4C60-8CFB-607720B6C5C9}
+		{199B67EA-0CA7-4CA1-849B-B62CEFAA578C} = {8B428419-DF5E-4685-985A-8793C348E758}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A5F746C9-DF37-41C7-B69F-58AE8718C46D}
