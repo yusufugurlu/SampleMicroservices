@@ -32,7 +32,7 @@ namespace SampleMicroservices.Services.Basket.Controllers
         [HttpPost]
         public async Task<IActionResult> SaveOrUpdteBasket(BasketDto basketDto)
         {
-            var response = await _basketService.SaveOrUpdate(basketDto); ;
+            var response = await _basketService.SaveOrUpdate(basketDto);
             return CreateActionResultInstance(response);
         }
 
