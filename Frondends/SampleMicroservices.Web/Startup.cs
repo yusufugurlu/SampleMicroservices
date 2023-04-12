@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +12,7 @@ using SampleMicroservices.Web.Helper;
 using SampleMicroservices.Web.Models;
 using SampleMicroservices.Web.Services;
 using SampleMicroservices.Web.Services.Interfaces;
+using SampleMicroservices.Web.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +59,7 @@ namespace SampleMicroservices.Web
                     opt.SlidingExpiration = true;
                 });
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CourseCreateInputValidator>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

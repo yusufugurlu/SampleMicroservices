@@ -24,7 +24,6 @@ namespace SampleMicroservices.Web.Models.Baskets
             {
                 if (HasDiscount)
                 {
-                    //Örnek kurs fiyat 100 TL indirim %10
                     _basketItems.ForEach(x =>
                     {
                         var discountPrice = x.Price * ((decimal)DiscountRate.Value / 100);
